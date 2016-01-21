@@ -1,3 +1,4 @@
+using System;
 public class BinaryReader
 {
     byte[] Source;
@@ -11,7 +12,7 @@ public class BinaryReader
     
     public Version ReadVersion()
     {
-        for(int i = 0; i < 4; i++)
+        for(int i = BinaryFormat.VersionOffset; i < 4; i++)
         {
             Out.Version[i] = Source[i];
         }
@@ -28,5 +29,18 @@ public class BinaryReader
             return Version.SOD;
         }
         return Version.Unknown;
+    }
+    
+    public Int32 ReadMapSize()
+    {
+        Int32 Start = BinaryFormat.MapSizeOffset;
+        Int32 End = BinaryFormat.MapSizeOffset + 4;
+        int j = 0;
+        for(int i = Start; i < End; i++)
+        {
+            Out.MapSize[j] = Source[i];
+            j++;
+        }
+        return BitConverter.ToInt32(Out.MapSize,0);
     }
 }

@@ -13,6 +13,7 @@ namespace HMM3
             byte[] Source = File.ReadAllBytes("Maps/Map1");
             var Map = new Map(Source);
             Console.WriteLine("Map version is: " + Map.Version);
+            Console.WriteLine("Map size is: " + Map.MapSize + "x" + Map.MapSize);
         }
     }
 }
