@@ -10,12 +10,9 @@ namespace HMM3
     {
         public void Main(string[] args)
         {
-            using(FileStream Map = new FileStream("Maps/Map1", FileMode.Open))
-            {
-                
-            }
-            Console.WriteLine("Hello World");
-            Console.ReadLine();
+            byte[] Source = File.ReadAllBytes("Maps/Map1");
+            var Map = new Map(Source);
+            Console.WriteLine("Map version is: " + Map.Version);
         }
     }
 }

@@ -1,5 +1,6 @@
 public class BinaryFormat
 {
+    public byte[] File;
     public byte[] Version = new byte[4]; 
     public byte[] IsHeroPresent = new byte[1];
     public byte[] MapSize = new byte[4];
@@ -9,4 +10,5 @@ public class BinaryFormat
     public byte[] MapNameSize = new byte[4];
     public byte[] MapName;
     public byte[] Difficulty = new byte[1];
+    
 }
