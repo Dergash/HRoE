@@ -1,7 +1,7 @@
 public enum Version
 {
-    Unknown = 0x00,
-    ROE = 0x0E,
-    AB = 0x15,
-    SOD = 0x1C
+    Unknown =           0x00000000,
+    ROE =               0x0000000E,
+    AB =                0x00000015,
+    SOD =               0x0000001C
 }

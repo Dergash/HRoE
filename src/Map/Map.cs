@@ -20,7 +20,7 @@ public class Map
         {
             GetHeader(Source);
         }
-        catch(BinaryFormat.MapFormatException e)
+        catch(BinaryReader.MapFormatException e)
         {
             Console.WriteLine("\nInvalid value occured while reading offest: " + e.ErrorOffset.ToString());
             Console.WriteLine("\n Value encountered: " + e.ErrorValue.ToString());
