@@ -2,6 +2,11 @@
 using System;
 public class BinaryReader
 {
+    public BinaryReader()
+    {
+        var Provider = System.Text.CodePagesEncodingProvider.Instance;
+        System.Text.Encoding.RegisterProvider(Provider);
+    }
     public class MapFormatException : System.FormatException
     {
         public Int32 ErrorOffset;
@@ -33,10 +38,15 @@ public class BinaryReader
     public Int32 ReadInt32(Int32 Offset, Byte[] Source)
     {
         Byte[] Value = new Byte[4];
-        for(int i = Offset, j = 0; j < 4; i++, j++)
+        for(int i = 0; i < 4; i++)
         {
-            Value[j] = Source[i]; 
+            Value[i] = Source[Offset + i]; 
         }
         return BitConverter.ToInt32(Value,0);
     }     
+    
+    public String ReadString(Int32 Offset, Int32 Length, Byte[] Source)
+    {
+        return System.Text.Encoding.GetEncoding(1251).GetString(Source, Offset, Length);   
+    }
 }

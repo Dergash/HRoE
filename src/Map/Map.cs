@@ -3,12 +3,12 @@ using System.IO;
 public class Map
 {
     public Version Version;
-    
     public Boolean IsHeroPresent;
     public Int32 MapSize;
-    
     public Boolean HasSubterrain;
-   
+    public String Name;
+    public String Description;
+    public Difficulty Difficulty;
     public Map(byte[] Source)
     {
         this.Parse(Source);
@@ -39,5 +39,8 @@ public class Map
         this.IsHeroPresent = HReader.GetIsHeroPresent();
         this.MapSize = HReader.GetMapSize();
         this.HasSubterrain = HReader.GetHasSubterrain();
+        this.Name = HReader.GetName();
+        this.Description = HReader.GetDescription();
+        this.Difficulty = HReader.GetDifficulty();
     }
 }

@@ -12,10 +12,12 @@ namespace HMM3
         {
             byte[] Source = File.ReadAllBytes("Maps/Map1");
             var Map = new Map(Source);
-
+            Console.WriteLine("Name:" + Map.Name);
             Console.WriteLine("Version: " + Map.Version);
             Console.WriteLine("Size is: " + GetFormattedMapSize(Map.MapSize, Map.HasSubterrain));
+            Console.WriteLine("Desc:" + Map.Description);
             Console.WriteLine("Has heroes: " + Map.IsHeroPresent);
+            Console.WriteLine("Difficulty: " + Map.Difficulty);
         }
         
         private String GetFormattedMapSize(Int32 Size, Boolean HasSubterrain)
