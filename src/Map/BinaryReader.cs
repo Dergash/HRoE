@@ -23,6 +23,7 @@ public class BinaryReader
     
     public Boolean ReadBoolean(Int32 Offset, Byte[] Source)
     {
+
         Byte Value = Source[Offset];
         if(Value == 0x00)
         {

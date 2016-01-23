@@ -1,17 +1,17 @@
 using System;
 public class HeaderReader
 {
-    public Int32 VersionOffset = 0x00000000;
-    public Int32 IsHeroPresentOffset = 0x00000004;
-    public Int32 MapSizeOffset = 0x00000005;
-    public Int32 HasSubterrainOffset = 0x0000009;
-    public Int32 NameSizeOffset = 0x000000A;
-    public Int32 NameOffset = 0x000000E;
-    public Int32 DescriptionSizeOffset;
-    public Int32 DescriptionOffset;
-    public Int32 DifficultyOffset;
-    private Int32? _nameSize;
-    public Int32 NameSize
+    Int32 VersionOffset = 0x00000000;
+    Int32 IsHeroPresentOffset = 0x00000004;
+    Int32 MapSizeOffset = 0x00000005;
+    Int32 HasSubterrainOffset = 0x0000009;
+    Int32 NameSizeOffset = 0x000000A;
+    Int32 NameOffset = 0x000000E;
+    Int32 DescriptionSizeOffset;
+    Int32 DescriptionOffset;
+    Int32 DifficultyOffset;
+    Int32? _nameSize;
+    Int32 NameSize
     {
         get
         {
@@ -23,8 +23,8 @@ public class HeaderReader
         }
     }
     
-    private Int32? _descriptionSize;
-    public Int32 DescriptionSize
+    Int32? _descriptionSize;
+    Int32 DescriptionSize
     {
         get
         {
@@ -36,7 +36,9 @@ public class HeaderReader
         }
     }
     
-    public byte[] Source;
+    public Int32 HeaderSize;
+    
+    byte[] Source;
     
     BinaryReader Reader;
     
@@ -52,6 +54,7 @@ public class HeaderReader
         DescriptionSizeOffset = NameOffset + NameSize;
         DescriptionOffset = DescriptionSizeOffset + 4;
         DifficultyOffset = DescriptionOffset + DescriptionSize;
+        HeaderSize = DifficultyOffset + 1;
     }
     public Version GetVersion()
     {
