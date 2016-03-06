@@ -16,7 +16,7 @@ namespace HROE.Controllers
         public String Maps = System.Web.Hosting.HostingEnvironment.MapPath("~/Maps/");
 
         // [Route("{id}/name"])
-        [Route("name")]
+        [Route("parse")]
         public Map getName(String MapName = "[SoD - RoE] ConfluxHero.h3m")
         {
             Map Test = ParseMap();
