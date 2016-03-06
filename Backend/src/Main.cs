@@ -10,7 +10,7 @@ namespace HMM3
     {
         public void Main(string[] args)
         {
-            byte[] Source = File.ReadAllBytes("Maps/Map1");
+            byte[] Source = File.ReadAllBytes("Maps/[SoD-RoE] ConfluxHero.h3m");
             var Map = new Map(Source);
             Console.WriteLine("Name:" + Map.Name);
             Console.WriteLine("Version: " + Map.Version);
@@ -18,6 +18,7 @@ namespace HMM3
             Console.WriteLine("Desc:" + Map.Description);
             Console.WriteLine("Has heroes: " + Map.IsHeroPresent);
             Console.WriteLine("Difficulty: " + Map.Difficulty);
+            
             Console.WriteLine("Players: ");
             foreach(Player Player in Map.Players)
             {
@@ -28,7 +29,8 @@ namespace HMM3
                 Console.Write("    ");
                 Console.Write("Player " + ((int)Player.Color));
                 Console.Write(" (" + Player.Color + ")");
-                Console.WriteLine("\n        Allowed for human: " + Player.AllowedForHuman);
+                Console.WriteLine("\n        Section type: " + Player.SectionType);
+                Console.WriteLine("        Allowed for human: " + Player.AllowedForHuman);
                 Console.WriteLine("        Allowed for computer: " + Player.AllowedForComputer);
                 Console.WriteLine("        Behavior: " + Player.Behavior);
                 Console.WriteLine("        Towns available: " + Player.TownsAvailable);
@@ -45,5 +47,18 @@ namespace HMM3
                 }
             }
         }
+        
+      /*  private Byte[] GetMapArray(string[] args)
+        {
+            Byte[] Result;
+            if(args[1] != null)
+            {
+                byte[] Source = File.ReadAllBytes(args[1]);
+            }
+            else
+            {
+                byte[] Source = File.ReadAllBytes("Maps/Map1");
+            }
+        }*/
     }
 }

@@ -1,11 +1,11 @@
-
 using System;
 public class BinaryReader
 {
     public BinaryReader()
     {
-        var Provider = System.Text.CodePagesEncodingProvider.Instance;
-        System.Text.Encoding.RegisterProvider(Provider);
+        
+       // var Provider = System.Text.CodePagesEncodingProvider.Instance;
+       // System.Text.Encoding.RegisterProvider(Provider);
     }
     public class MapFormatException : System.FormatException
     {
