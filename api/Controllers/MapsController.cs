@@ -7,9 +7,11 @@ using System.Web.Http;
 using System.IO;
 using System.Web;
 using HMM3;
+using System.Web.Http.Cors;
 
 namespace HROE.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class MapsController : ApiController
     {
 
